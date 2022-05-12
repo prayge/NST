@@ -6,7 +6,7 @@ The VGG model, which is pretrained to perform object recognition and localizatio
 
 ## Content Loss 
 
-Content loss is calculated by Euclidean distance between the feature respresntation $F$ of the content image $x$ and the feature representation $P$ of the target image $p$. See the code [here]()
+Content loss is calculated by Euclidean distance between the feature respresntation $F$ of the content image $x$ and the feature representation $P$ of the target image $p$. See the code [here](https://github.com/prayge/NST/blob/ee724dce022250ff32c9ba0acf348374bc44afb0/main.py#L75)
 
 ![a](utils/contentLoss.png)
 
