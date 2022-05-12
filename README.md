@@ -13,7 +13,7 @@ Content loss is calculated by Euclidean distance between the feature respresntat
 
 ## Style Loss
 
-Style loss uses a *Gram Matrix* to interpret style information. A Gram matrix is computed by taking an initial matrix of data and mutliplying it by the a transposed version of the matrix. The Style loss is calculated by the distance between the gram matrices and the style image. See the code [here]()
+Style loss uses a *Gram Matrix* to interpret style information. A Gram matrix is computed by taking an initial matrix of data and mutliplying it by the a transposed version of the matrix. The Style loss is calculated by the distance between the gram matrices and the style image. See the code [here](https://github.com/prayge/NST/blob/747ebb4df918c4619948baa14931973a18843bbf/main.py#L81-L84)
 
 ![a](utils/styleLoss.png)
 ## Installation and Usage
