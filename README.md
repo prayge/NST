@@ -22,7 +22,6 @@ The program uses a set of *Config* options from `init.py` which have a set of de
 ```
 git clone --recursive https://github.com/prayge/NST.git
 pip install -r requirements.txt
-python main.py --content='png/content.png' --style='png/style.png'
 python main.py --contentimage='test/piccy.jpg' --styleimage='test/style.jpg'
 ```
 
