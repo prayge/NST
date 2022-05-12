@@ -103,11 +103,11 @@ def main(config):
             print ('Step [{}/{}], Content Loss: {:.4f}, Style Loss: {:.4f}' 
                    .format(step+1, config.total_step, content_loss.item(), style_loss.item()))
         
-        if (step+1) % 150 == 0:
+        if (step+1) % 50 == 0:
             rmnorm = transforms.Normalize((-2.12, -2.04, -1.80), (4.37, 4.46, 4.44))
             img = target.clone().squeeze()
             img = rmnorm(img).clamp_(0, 1)
-            torchvision.utils.save_image(img, 'C:/Users/samue/Documents/Pro gramming/GitHub/NST/prog/output-{}-{}.png'.format(config.style, step+1))
+            torchvision.utils.save_image(img, 'C:/Users/samue/Documents/Pro gramming/GitHub/NST/prog/output-{}.png'.format(step+1))
 
         if (step+1) % config.sample_step == 0:
             # Save the generated image
