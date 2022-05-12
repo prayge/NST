@@ -7,7 +7,7 @@ class Config():
         self.initialized = False
 
     def initialize(self,parser):
-        parser.add_argument('--contentimage', type=str, default='png/hid.jpg')
+        parser.add_argument('--contentimage', type=str, default='png/content.jpg')
         parser.add_argument('--styleimage', type=str, default='png/style.jpg')
         parser.add_argument('--max_size', type=int, default=750)
         parser.add_argument('--steps', type=int, default=2000)

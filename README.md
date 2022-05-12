@@ -6,14 +6,16 @@ The VGG model, which is pretrained to perform object recognition and localizatio
 
 ## Content Loss 
 
-Content loss is calculated by Euclidean distance between the feature respresntation $F$ of the content image $x$ and the feature representation $P$ of the target image $p$. See the code [here](https://github.com/prayge/NST/blob/ee724dce022250ff32c9ba0acf348374bc44afb0/main.py#L75)
+Content loss is calculated by Euclidean distance between the feature respresntation (F) of the content image (x) and the feature representation (P) of the target image (p). See the code [here](https://github.com/prayge/NST/blob/ee724dce022250ff32c9ba0acf348374bc44afb0/main.py#L75).
 
 ![a](utils/contentLoss.png)
 
 
 ## Style Loss
 
+Style loss uses a *Gram Matrix* to interpret style information. A Gram matrix is computed by taking an initial matrix of data and mutliplying it by the a transposed version of the matrix. The Style loss is calculated by the distance between the gram matrices and the style image. See the code [here]()
 
+![a](utils/styleLoss.png)
 ## Installation and Usage
 
 The program uses a set of *Config* options from `init.py` which have a set of defualt parameters, so simply run the program after installing all prerequisite libraries. 
@@ -26,4 +28,6 @@ python main.py --contentimage='test/piccy.jpg' --styleimage='test/style.jpg'
 
 ## Results
 
-The following result is for a process of 2000 steps with a style weight of 100
+The following results are a combination of `./test/content.jpg` as the content image and `./style.jpg` as the style with 2000 steps. 
+
+![](./utils/output.png)
