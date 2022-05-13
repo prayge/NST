@@ -9,7 +9,7 @@ import numpy as np
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def load_image(image_path, transform=None, max_size=None, shape=None):
-    image = Image.open(image_path)
+    image = Image.open(image_path).convert('RGB')
     
     if max_size:
         scale = max_size / max(image.size)
