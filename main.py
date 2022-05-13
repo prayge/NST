@@ -8,44 +8,11 @@ import torchvision
 import torch.nn as nn
 import numpy as np
 from init import Config
-
+from net import VGGNet
+from utils import load_image
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-def load_image(image_path, transform=None, max_size=None, shape=None):
-    image = Image.open(image_path)
-    
-    if max_size:
-        scale = max_size / max(image.size)
-        size = np.array(image.size) * scale
-        image = image.resize(size.astype(int), Image.ANTIALIAS)
-    
-    if shape:
-        image = image.resize(shape, Image.LANCZOS)
-    
-    if transform:
-        image = transform(image).unsqueeze(0)
-    
-    return image.to(device)
-
-
-class VGGNet(nn.Module):
-    def __init__(self):
-       
-        super(VGGNet, self).__init__()
-        self.select = ['0', '5', '10', '19', '28'] 
-        self.vgg = models.vgg19(pretrained=True).features
-        
-    def forward(self, x):
-      
-        features = []
-        for name, layer in self.vgg._modules.items():
-            x = layer(x)
-            if name in self.select:
-                features.append(x)
-        return features
-
 
 def main(cfg):
   
