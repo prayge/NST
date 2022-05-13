@@ -28,4 +28,4 @@ def load_image(image_path, transform=None, max_size=None, shape=None):
         image = transform(image).unsqueeze(0)
     
     return image.to(device)    
-    #img
+    #imgs
