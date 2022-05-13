@@ -25,3 +25,5 @@ class Config():
         cfg = parser.parse_args()
         # set gpu ids
         return cfg
+
+    

@@ -9,7 +9,7 @@ import torch.nn as nn
 import numpy as np
 from init import Config
 from net import VGGNet
-from utils import load_image
+from utils import load_image, printf
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -56,7 +56,7 @@ def main(cfg):
         optimizer.step()
 
         if (step+1) % cfg.log_step == 0:
-            print ('Step [{}/{}], Content Loss: {:.4f}, Style Loss: {:.4f}' 
+            printf('Step [{}/{}], Content Loss: {:.4f}, Style Loss: {:.4f}' 
                    .format(step+1, cfg.steps, content_loss.item(), style_loss.item()))
         
         if (step+1) % cfg.sample_step == 0:

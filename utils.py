@@ -4,9 +4,14 @@ import torch
 import torchvision
 import torch.nn as nn
 import numpy as np
-
+from datetime import datetime
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+def printf(*arg, **kwarg):
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    print(timestamp, *arg, **kwarg)
+
 
 def load_image(image_path, transform=None, max_size=None, shape=None):
     image = Image.open(image_path).convert('RGB')
