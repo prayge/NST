@@ -13,7 +13,7 @@ Content loss is calculated by Euclidean distance between the feature respresntat
 
 ## Style Loss
 
-Style loss uses a *Gram Matrix* to interpret style information. A Gram matrix is computed by taking an initial matrix of data and mutliplying it by the a transposed version of the matrix. The Style loss is calculated by the distance between the gram matrices and the style image. See the code [here](https://github.com/prayge/NST/blob/747ebb4df918c4619948baa14931973a18843bbf/main.py#L81-L84)
+Style loss uses a *Gram Matrix* to interpret style information. A Gram matrix is computed by taking an initial matrix of data and mutliplying it by the a transposed version of the matrix. The Style loss is calculated by the distance between the gram matrices and the style image. See the code for the gram matrix and the style loss [here](https://github.com/prayge/NST/blob/747ebb4df918c4619948baa14931973a18843bbf/main.py#L81-L84)
 
 ![a](utils/styleLoss.png)
 ## Installation and Usage
@@ -22,7 +22,6 @@ The program uses a set of *Config* options from `init.py` which have a set of de
 ```
 git clone --recursive https://github.com/prayge/NST.git
 pip install -r requirements.txt
-python main.py --content='png/content.png' --style='png/style.png'
 python main.py --contentimage='test/piccy.jpg' --styleimage='test/style.jpg'
 ```
 
